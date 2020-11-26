@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrinkto-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Homepage</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-center mb-4">TO DO LIST</h2>
+            <div class="form-container px-3">
+                <input type="text" class="form-control" id="todo_input" placeholder="Enter item">
+                <button class="btn btn-primary" onclick="addItem()">Add list</button>
+            </div>
+            <div class="list-container">
+                <ul id="display_todos"></ul>
+            </div>
+        </div>
+    </body>
+</html>

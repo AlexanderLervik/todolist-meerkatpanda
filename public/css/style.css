@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+.container{
+      padding: 15px 25px;
+      background-color: #efefef;
+      border-radius:10px;
+      background-color:#B3E8DF;
+  }
+.form-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-control{
+    flex:2;
+}
+.btn {
+    flex:1
+}
+.btn{
+    background-color: #68A2E4;
+}
