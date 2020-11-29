@@ -44,9 +44,9 @@ function deleteCheck(e) {
         let todo = item.parentElement;
         todo.classList.add("fall");
 
-        /* setTimeout(function () {
+        setTimeout(function () {
             item.parentElement.remove(item);
-        }, 500); */
+        }, 500); 
         
     }
 
