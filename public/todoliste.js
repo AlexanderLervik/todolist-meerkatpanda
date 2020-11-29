@@ -23,35 +23,34 @@ function addTodo(event) {
     //lage check mark button
 
     let completedButton = document.createElement("button");
-    completedButton.innerHTML= ' <i class="fas fa-check"></i> ';
-    completedButton.classList.add("complete-btn");
+    completedButton.innerHTML= "DONE";
+    completedButton.classList.add("complete-button");
     todoDiv.appendChild(completedButton);
 
     //lage check delete button
     let trashButton = document.createElement("button");
-    trashButton.innerHTML ='<i class="fas fa-trash"></i>';
-    trashButton.classList.add("trash-btn");
+    trashButton.innerHTML ="REMOVE";
+    trashButton.classList.add("trash-button");
     todoDiv.appendChild(trashButton);
  //append to the list
-        todoList.appendChild(todoDiv);
-    
+     todoList.appendChild(todoDiv);
 //Fjern ut input
     todoInput.value = "";
 }
 
 function deleteCheck(e) {
     let item = e.target;
-    if (item.classList[0] === "trash-btn") {
+    if (item.classList[0] === "trash-button") {
         let todo = item.parentElement;
         todo.classList.add("fall");
-        
+
         setTimeout(function () {
             item.parentElement.remove(item);
         }, 500);
         
     }
 
-    if (item.classList[0] === "complete-btn") {
+    if (item.classList[0] === "complete-button") {
        let todo = item.parentElement; 
         todo.classList.toggle("completed");
     }
