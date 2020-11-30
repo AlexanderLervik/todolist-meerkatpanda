@@ -14,12 +14,19 @@ function addTask(event) {
     // Todo div
     let todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
+    
+    
+    if (todoInput.value === "") {
+        alert("You must write something!")
+        return;
+    } else {
     // Create Li element
     let newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-
+    }
+    
     // Make checkmark button
 
     let completedButton = document.createElement("button");
