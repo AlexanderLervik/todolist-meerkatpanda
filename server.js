@@ -18,6 +18,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const app = express()
+const path = require('path')
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
 const bcrypt = require('bcrypt')
@@ -112,4 +116,4 @@ function checkNotAuthenticated(req, res, next) {
 // Get public folder
 app.use(express.static(__dirname + '/public'))
 
-app.listen(3000)
+//app.listen(3000)
