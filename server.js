@@ -21,6 +21,9 @@ const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 3000
 
+
+
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
@@ -115,5 +118,6 @@ function checkNotAuthenticated(req, res, next) {
 
 // Get public folder
 app.use(express.static(__dirname + '/public'))
+app.set('viewss', path.join(__dirname, 'server'))
 
 //app.listen(3000)
