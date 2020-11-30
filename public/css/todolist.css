@@ -27,7 +27,7 @@
     
     header,
     form {
-        min-height: 20vh;
+        min-height: 16vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -113,6 +113,11 @@
         padding: 0rem 0.5rem;
         
     
+    }
+
+    .fa-check,
+    .fa-trash {
+        pointer-events: none;
     }
     
     .completed{

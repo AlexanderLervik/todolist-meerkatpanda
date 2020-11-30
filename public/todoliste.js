@@ -3,38 +3,38 @@ let todoButton = document.querySelector(".todo-button");
 let todoList = document.querySelector(".todo-list");
 
 
-//event listner
+// Event listener
 todoButton.addEventListener("click", addTask);
 todoList.addEventListener("click", removeCheck); 
 
-//funksjon
+// Function addtask
 
 function addTask(event) {
     event.preventDefault();
-    //todo div
+    // Todo div
     let todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
-    //lage Li
+    // Create Li element
     let newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
 
-    //lage check mark button
+    // Make checkmark button
 
     let completedButton = document.createElement("button");
-    completedButton.innerHTML= "DONE";
+    completedButton.innerHTML= ' <i class="fas fa-check"></i> ';
     completedButton.classList.add("complete-button");
     todoDiv.appendChild(completedButton);
 
-    //lage check delete button
+    // Make check remove button
     let removeButton = document.createElement("button");
-    removeButton.innerHTML ="REMOVE";
+    removeButton.innerHTML ='<i class="fas fa-trash"></i>';
     removeButton.classList.add("remove-button");
     todoDiv.appendChild(removeButton);
- //append to the list
+    // Append to the list
      todoList.appendChild(todoDiv);
-//Fjern ut input
+    // Remove the input after appending
     todoInput.value = "";
 }
 
@@ -46,7 +46,7 @@ function removeCheck(e) {
 
         setTimeout(function () {
             item.parentElement.remove(item);
-        }, 500); 
+        }, 350); 
         
     }
 
