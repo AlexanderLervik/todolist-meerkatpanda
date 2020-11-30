@@ -1,30 +1,24 @@
-/*const express = require('express');
-const bodyparser = require("body-parser");
-const {client} = require("pg");
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+
+}
+
+const express = require('express');
+//const bodyparser = require("body-parser");
+//const {client} = require("pg");
 const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'server'))
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-*/
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
-
-const express = require('express')
-const app = express()
-const path = require('path')
-const PORT = process.env.PORT || 3000
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('viewss', path.join(__dirname, 'server'))
 
 
 
+//const express = require('express')
+//const app = express()
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
 const bcrypt = require('bcrypt')
@@ -117,7 +111,5 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 // Get public folder
-app.use(express.static(__dirname + '/public'))
-app.set('viewss', path.join(__dirname, 'server'))
 
-//app.listen(3000)
+app.listen(PORT || 3000)
