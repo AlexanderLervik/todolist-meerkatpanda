@@ -3,44 +3,44 @@ let todoButton = document.querySelector(".todo-button");
 let todoList = document.querySelector(".todo-list");
 
 
-//event listner
+// Event listener
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck); 
 
-//funsjon
+// Function 
 
 function addTodo(event) {
     event.preventDefault();
-    //todo div
+    // Todo div
     let todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
-    //lage Li
+    // Create li
     let newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
 
-    //lage check mark button
+    // Make checkmark button
 
     let completedButton = document.createElement("button");
     completedButton.innerHTML= "DONE";
     completedButton.classList.add("complete-button");
     todoDiv.appendChild(completedButton);
 
-    //lage check delete button
+    // Make check delete button
     let trashButton = document.createElement("button");
     trashButton.innerHTML ="REMOVE";
     trashButton.classList.add("trash-button");
     todoDiv.appendChild(trashButton);
- //append to the list
+    // Append to the list
      todoList.appendChild(todoDiv);
-//Fjern ut input
+    // Remove input
     todoInput.value = "";
 }
 
-function deleteCheck(e) {
-    let item = e.target;
-    if (item.classList[0] === "trash-button") {
+    function deleteCheck(e) {
+        let item = e.target;
+        if (item.classList[0] === "trash-button") {
         let todo = item.parentElement;
         todo.classList.add("fall");
 
