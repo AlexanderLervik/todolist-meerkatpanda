@@ -3,44 +3,44 @@ let todoButton = document.querySelector(".todo-button");
 let todoList = document.querySelector(".todo-list");
 
 
-// Event listener
-todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteCheck); 
+//event listner
+todoButton.addEventListener("click", addTask);
+todoList.addEventListener("click", removeCheck); 
 
-// Function 
+//funksjon
 
-function addTodo(event) {
+function addTask(event) {
     event.preventDefault();
-    // Todo div
+    //todo div
     let todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
-    // Create li
+    //lage Li
     let newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
 
-    // Make checkmark button
+    //lage check mark button
 
     let completedButton = document.createElement("button");
     completedButton.innerHTML= "DONE";
     completedButton.classList.add("complete-button");
     todoDiv.appendChild(completedButton);
 
-    // Make check delete button
-    let trashButton = document.createElement("button");
-    trashButton.innerHTML ="REMOVE";
-    trashButton.classList.add("trash-button");
-    todoDiv.appendChild(trashButton);
-    // Append to the list
+    //lage check delete button
+    let removeButton = document.createElement("button");
+    removeButton.innerHTML ="REMOVE";
+    removeButton.classList.add("remove-button");
+    todoDiv.appendChild(removeButton);
+ //append to the list
      todoList.appendChild(todoDiv);
-    // Remove input
+//Fjern ut input
     todoInput.value = "";
 }
 
-    function deleteCheck(e) {
-        let item = e.target;
-        if (item.classList[0] === "trash-button") {
+function removeCheck(e) {
+    let item = e.target;
+    if (item.classList[0] === "remove-button") {
         let todo = item.parentElement;
         todo.classList.add("fall");
 
